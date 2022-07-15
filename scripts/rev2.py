@@ -9,13 +9,13 @@ def linear_map_to_range(rating, min_value, max_value, min_range, max_range, rati
     """
     Linear transformation of any rating into [min_range, max_range] range
 
-    :param rating: rating of something (product, review, etc) in stars (ONE, TWO, ... FIVE)
+    :param rating: rating of something (product, review, etc) in stars (ONE, TWO, ... FIVE) OR fp number
     :param min_value: minimum numerical representation of rating
     :param max_value: maximum numerical representation of rating
     :param min_range: minimum value in the new range
     :param max_range: maximum value in the new range
-    :return: FP value between min_range and max_range representing that mapping
     :param rating_mapping: a map that converts a string rating into a numeric rating
+    :return: FP value between min_range and max_range representing that mapping
     """
     value = rating_mapping[rating] if rating_mapping is not None else rating
     return (value - min_value) / (max_value - min_value) * (max_range - min_range) + min_range
